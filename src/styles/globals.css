@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles will be expanded by Design System Agent */
+@layer base {
+  :root {
+    /* CSS variables for theming - Design System Agent will add Blueprint Lead tokens */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
