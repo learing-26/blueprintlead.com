@@ -2,13 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global styles will be expanded by Design System Agent */
+/* Blueprint Lead Design System - Global Styles */
 @layer base {
   :root {
-    /* CSS variables for theming - Design System Agent will add Blueprint Lead tokens */
+    /* Blueprint Lead Design Tokens */
+    --color-primary: #334155; /* deep-slate-700 */
+    --color-primary-dark: #1e293b; /* deep-slate-800 */
+    --color-accent: #10b981; /* emerald-accent-500 */
+    --color-accent-dark: #059669; /* emerald-accent-600 */
+    --color-accent-light: #d1fae5; /* emerald-accent-100 */
+  }
+
+  * {
+    @apply border-gray-200;
   }
 
   body {
     @apply antialiased;
+    @apply text-deep-slate-900;
+    @apply bg-white;
+  }
+
+  /* Typography base styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-deep-slate-900;
+  }
+
+  h1 {
+    @apply text-5xl leading-tight;
+  }
+
+  h2 {
+    @apply text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-2xl leading-snug;
+  }
+
+  h5 {
+    @apply text-xl leading-normal;
+  }
+
+  h6 {
+    @apply text-lg leading-normal;
+  }
+
+  p {
+    @apply text-base leading-relaxed text-deep-slate-700;
+  }
+
+  a {
+    @apply text-emerald-accent-600 hover:text-emerald-accent-700;
+    @apply transition-colors duration-200;
+    @apply underline-offset-4;
+  }
+
+  strong {
+    @apply font-semibold text-deep-slate-900;
+  }
+
+  small {
+    @apply text-sm text-deep-slate-600;
   }
 }

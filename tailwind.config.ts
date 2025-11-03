@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Deep Slate (Primary) - Design System Agent will expand these
+        // Deep Slate (Primary) - Blueprint Lead brand color
         'deep-slate': {
           50: '#f8fafc',
           100: '#f1f5f9',
@@ -24,7 +24,7 @@ const config: Config = {
           900: '#0f172a',
           950: '#020617',
         },
-        // Emerald Green (Accent) - Design System Agent will expand these
+        // Emerald Green (Accent) - Blueprint Lead accent color
         'emerald-accent': {
           50: '#ecfdf5',
           100: '#d1fae5',
@@ -38,6 +38,9 @@ const config: Config = {
           900: '#064e3b',
           950: '#022c22',
         },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
     },
   },
