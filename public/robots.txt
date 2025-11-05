@@ -1,0 +1,11 @@
+# Blueprint Lead - Robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow pages with noindex
+Disallow: /thank-you
+
+# Sitemap location
+Sitemap: https://blueprintlead.com/sitemap.xml

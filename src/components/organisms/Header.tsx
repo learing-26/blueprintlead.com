@@ -48,30 +48,34 @@ export function Header(): React.ReactElement {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between py-6">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 min-w-[220px]">
             <NavLink
               href="/"
-              className="text-2xl font-bold text-deep-slate-900 hover:text-deep-slate-900 no-underline"
+              className="text-3xl font-bold text-slate-900 hover:text-emerald-accent-600 no-underline transition-colors duration-200"
             >
               {SITE_CONFIG.name}
             </NavLink>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center justify-center flex-1 gap-8">
             {NAV_LINKS.map((link) => (
-              <NavLink key={link.href} href={link.href}>
+              <NavLink
+                key={link.href}
+                href={link.href}
+                className="text-base font-medium"
+              >
                 {link.label}
               </NavLink>
             ))}
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center justify-end min-w-[220px]">
             <CTAButton
               variant="primary"
               size="md"
@@ -89,7 +93,7 @@ export function Header(): React.ReactElement {
               size="sm"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
-              className="text-deep-slate-900 hover:text-deep-slate-900"
+              className="text-slate-900 hover:text-emerald-accent-600"
             >
               <Menu className="h-6 w-6" />
             </Button>
@@ -122,7 +126,7 @@ export function Header(): React.ReactElement {
             >
               {/* Close Button */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                <span className="text-xl font-bold text-deep-slate-900">
+                <span className="text-xl font-bold text-slate-900">
                   Menu
                 </span>
                 <Button
@@ -130,7 +134,7 @@ export function Header(): React.ReactElement {
                   size="sm"
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="Close menu"
-                  className="text-deep-slate-900 hover:text-deep-slate-900"
+                  className="text-slate-900 hover:text-emerald-accent-600"
                 >
                   <X className="h-6 w-6" />
                 </Button>

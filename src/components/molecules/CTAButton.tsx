@@ -2,6 +2,7 @@ import { Button, type ButtonProps } from "@/components/atoms/Button";
 import { Icon } from "@/components/atoms/Icon";
 import { type LucideIcon } from "lucide-react";
 import React from "react";
+import Link from "next/link";
 
 export interface CTAButtonProps extends ButtonProps {
   /**
@@ -58,17 +59,24 @@ export function CTAButton({
     </>
   );
 
-  // External link (e.g., Calendly)
+  // Link with href
   if (href) {
+    const isExternal = href.startsWith("http://") || href.startsWith("https://");
+
+    // External link (e.g., Calendly)
+    if (isExternal) {
+      return (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          <Button {...props}>{content}</Button>
+        </a>
+      );
+    }
+
+    // Internal Next.js route
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={props.className}
-      >
+      <Link href={href}>
         <Button {...props}>{content}</Button>
-      </a>
+      </Link>
     );
   }
 

@@ -10,18 +10,21 @@ export const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Email configuration constants
 export const EMAIL_CONFIG = {
-  from: "Blueprint Lead <noreply@blueprintlead.com>",
-  to: "info@blueprintlead.com", // Update with actual recipient
+  from: "Blueprint Lead <onboarding@resend.dev>", // Using Resend's domain
+  to: "info@blueprintlead.com",
   subject: "New Contact Form Submission - Blueprint Lead",
 } as const;
 
 // Type definitions for contact form data
 export interface ContactFormData {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phone: string;
-  licenseNumber: string;
-  projectPreferences?: string;
+  phone?: string;
+  company: string;
+  license: string;
+  contactMethod: string;
+  bestTime: string;
   serviceAreas?: string;
   message?: string;
 }

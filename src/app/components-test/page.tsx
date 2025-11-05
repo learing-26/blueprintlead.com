@@ -10,6 +10,11 @@ import { CTAButton } from "@/components/molecules/CTAButton";
 import { TrustBadge } from "@/components/molecules/TrustBadge";
 import { NavLink } from "@/components/molecules/NavLink";
 import { FormField } from "@/components/molecules/FormField";
+import { TierCard } from "@/components/organisms/TierCard";
+import { ProjectTypeCard } from "@/components/organisms/ProjectTypeCard";
+import { TestimonialCard } from "@/components/organisms/TestimonialCard";
+import { FAQAccordion } from "@/components/organisms/FAQAccordion";
+import { TIERS, PROJECT_TYPES, TESTIMONIALS } from "@/lib/constants";
 import {
   Check,
   Calendar,
@@ -18,6 +23,8 @@ import {
   Home,
   Info,
   Mail,
+  Hammer,
+  Droplet,
 } from "lucide-react";
 
 export default function ComponentsTestPage() {
@@ -30,7 +37,7 @@ export default function ComponentsTestPage() {
             Blueprint Lead Components
           </h1>
           <p className="text-xl text-deep-slate-600">
-            Complete component library showcase for Phase 3 verification
+            Complete component library showcase - Phase 5A verification
           </p>
           <p className="text-sm text-deep-slate-500 mt-2">
             Note: This page will be deleted in Phase 8 (Polish Agent)
@@ -388,6 +395,73 @@ export default function ComponentsTestPage() {
           </div>
         </section>
 
+        {/* Organism Components - Phase 5A */}
+        <section className="space-y-12 border-t border-gray-200 pt-16">
+          <div>
+            <h2 className="mb-6">Organism Components (Phase 5A)</h2>
+            <p className="text-deep-slate-600 mb-8">
+              Complex organisms composed from atoms and molecules with real data
+            </p>
+          </div>
+
+          {/* TierCard Component */}
+          <div className="space-y-6">
+            <h3 className="text-deep-slate-900">TierCard Component</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {TIERS.map((tier, index) => (
+                <TierCard key={index} {...tier} />
+              ))}
+            </div>
+          </div>
+
+          {/* ProjectTypeCard Component */}
+          <div className="space-y-6">
+            <h3 className="text-deep-slate-900">ProjectTypeCard Component</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PROJECT_TYPES.slice(0, 3).map((type, index) => (
+                <ProjectTypeCard key={index} {...type} />
+              ))}
+            </div>
+          </div>
+
+          {/* TestimonialCard Component */}
+          <div className="space-y-6">
+            <h3 className="text-deep-slate-900">TestimonialCard Component</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {TESTIMONIALS.map((testimonial, index) => (
+                <TestimonialCard key={index} {...testimonial} />
+              ))}
+            </div>
+          </div>
+
+          {/* FAQAccordion Component */}
+          <div className="space-y-6">
+            <h3 className="text-deep-slate-900">FAQAccordion Component</h3>
+            <div className="max-w-3xl">
+              <FAQAccordion
+                items={[
+                  {
+                    question: "What licenses do I need to receive leads?",
+                    answer:
+                      "You must hold an active California contractor's license (Class A, B, or relevant C-class specialty license) and maintain current liability insurance.",
+                  },
+                  {
+                    question: "How are homeowners vetted?",
+                    answer:
+                      "Every homeowner goes through permit verification, budget qualification, and timeline confirmation before being matched with contractors.",
+                  },
+                  {
+                    question: "Do you sell leads to multiple contractors?",
+                    answer:
+                      "No. Each lead is exclusive to one contractor per specialty. For multi-discipline projects, we may match different specialists.",
+                  },
+                ]}
+                defaultOpenIndex={0}
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Accessibility Testing */}
         <section className="space-y-8 border-t border-gray-200 pt-16">
           <div>
@@ -439,8 +513,9 @@ export default function ComponentsTestPage() {
         {/* Footer Note */}
         <footer className="border-t border-gray-200 pt-8 mt-16">
           <p className="text-sm text-deep-slate-500">
-            <strong>Core Components Agent - Phase 3 Complete</strong><br />
-            All atomic and molecular components have been implemented and verified.
+            <strong>Phase 5A Complete - Organisms Built</strong><br />
+            All atomic, molecular, and organism components have been implemented and verified.
+            TierCard, ProjectTypeCard, TestimonialCard, and FAQAccordion are now available.
             This page will be deleted by Polish Agent in Phase 8.
           </p>
         </footer>

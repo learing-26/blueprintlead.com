@@ -1197,11 +1197,43 @@ OUTPUT: Complete layout system (Header, Footer, templates), handoff document
 - Pages need to be built with actual content
 - Website structure needs implementation
 
+**NOTE:** Phase 5 is broken into 5 sub-phases (5A-5E) for modularity and context management. Each sub-phase creates a handoff document and agents auto-proceed to the next sub-phase.
+
+**Phase 5 Breakdown:**
+
+**Phase 5A: Foundation - Organisms & Data (3-4 hours)**
+- Review existing HeroSection.tsx (created during planning)
+- Build 4 remaining organisms: TierCard, ProjectTypeCard, TestimonialCard, FAQAccordion
+- Add data constants: TIERS, PROJECT_TYPES, TESTIMONIALS, FAQ_CATEGORIES, VALUE_PROPS
+- Create handoff: `/docs/handoffs/phase-5a-organisms.md`
+
+**Phase 5B: Simple Pages (2-3 hours)**
+- Build /privacy (Privacy Policy - legal text)
+- Build /terms (Terms of Service - legal text)
+- Build /about (About Us - HeroSection + text sections)
+- Create handoff: `/docs/handoffs/phase-5b-simple-pages.md`
+
+**Phase 5C: Process Pages (3 hours)**
+- Build /how-it-works (5-step process)
+- Build /why-choose-us (5 differentiators + comparison)
+- Create handoff: `/docs/handoffs/phase-5c-process-pages.md`
+
+**Phase 5D: Feature Pages (4-5 hours)**
+- Build /project-types (8 ProjectTypeCards)
+- Build /pricing (4 TierCards + FAQ preview)
+- Build /faq (FAQAccordion with 40+ items)
+- Create handoff: `/docs/handoffs/phase-5d-feature-pages.md`
+
+**Phase 5E: Contact & Homepage (5-6 hours)**
+- Build /contact (FormField components + Zod validation + Calendly CTAs)
+- Build / (homepage - most complex, uses all organisms)
+- Create handoff: `/docs/handoffs/phase-5e-final-pages.md`
+
 **Primary Responsibility:**
 
 INPUT: Complete layout system, all components, /docs/website-content.md, handoff from Layout Agent
-PROCESS: Read all content → Verify content protocol → Build pages systematically → Add specific animations → Test page-by-page
-OUTPUT: All 10 pages built, page-specific organisms, animations, handoff document
+PROCESS: Execute 5A→5B→5C→5D→5E with handoff documents between each sub-phase
+OUTPUT: All 10 pages built, 5 organisms, data constants, animations, 5 handoff documents
 
 **Content Verification Protocol (CRITICAL):**
 1. Read `/docs/website-content.md` in full BEFORE building any page

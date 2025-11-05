@@ -56,13 +56,16 @@ export interface Testimonial {
 
 // Contact form types (also defined in lib/resend.ts)
 export interface ContactFormValues {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phone: string;
-  licenseNumber: string;
-  projectPreferences?: string;
-  serviceAreas?: string;
-  message?: string;
+  phone?: string; // Optional
+  company: string;
+  license: string; // Contractor license number
+  contactMethod: "Email" | "Phone" | "Video";
+  bestTime: "Morning" | "Afternoon" | "Evening";
+  serviceAreas?: string; // Optional
+  message?: string; // Optional
 }
 
 // API response types
