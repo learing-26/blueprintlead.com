@@ -75,7 +75,14 @@ export function Header(): React.ReactElement {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center justify-end min-w-[220px]">
+          <div className="hidden lg:flex items-center justify-end min-w-[220px] gap-3">
+            <CTAButton
+              variant="secondary"
+              size="md"
+              href="https://app.blueprintlead.com/login"
+            >
+              Sign In
+            </CTAButton>
             <CTAButton
               variant="primary"
               size="md"
@@ -154,7 +161,15 @@ export function Header(): React.ReactElement {
               </nav>
 
               {/* Mobile CTA */}
-              <div className="p-6 border-t border-gray-200">
+              <div className="p-6 border-t border-gray-200 space-y-3">
+                <CTAButton
+                  variant="secondary"
+                  size="lg"
+                  href="https://app.blueprintlead.com/login"
+                  className="w-full justify-center"
+                >
+                  Sign In
+                </CTAButton>
                 <CTAButton
                   variant="primary"
                   size="lg"
