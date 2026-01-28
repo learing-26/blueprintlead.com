@@ -84,6 +84,13 @@ export function Header(): React.ReactElement {
               Sign In
             </CTAButton>
             <CTAButton
+              variant="outline"
+              size="md"
+              href="https://app.blueprintlead.com/apply"
+            >
+              Apply Now
+            </CTAButton>
+            <CTAButton
               variant="primary"
               size="md"
               icon={Calendar}
@@ -169,6 +176,14 @@ export function Header(): React.ReactElement {
                   className="w-full justify-center"
                 >
                   Sign In
+                </CTAButton>
+                <CTAButton
+                  variant="outline"
+                  size="lg"
+                  href="https://app.blueprintlead.com/apply"
+                  className="w-full justify-center"
+                >
+                  Apply Now
                 </CTAButton>
                 <CTAButton
                   variant="primary"

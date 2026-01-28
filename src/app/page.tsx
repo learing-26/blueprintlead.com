@@ -83,6 +83,14 @@ export default function HomePage(): React.ReactElement {
             >
               See How It Works
             </CTAButton>
+            <CTAButton
+              variant="outline"
+              size="lg"
+              href="https://app.blueprintlead.com/apply"
+              className="border-2 border-emerald-400 text-emerald-400 hover:bg-emerald-400/10"
+            >
+              Apply to Join Network
+            </CTAButton>
           </div>
           <p className="text-sm text-white/70">
             Licensed & Insured Contractors Only | 100% Exclusive Leads | Est.
