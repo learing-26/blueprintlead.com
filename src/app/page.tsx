@@ -64,7 +64,7 @@ export default function HomePage(): React.ReactElement {
             and are ready for construction. You&apos;re the only contractor
             meeting with them.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <CTAButton
               variant="primary"
               size="lg"
@@ -84,18 +84,21 @@ export default function HomePage(): React.ReactElement {
               See How It Works
             </CTAButton>
           </div>
-          <p className="text-sm text-white/70 mb-4">
-            Licensed & Insured Contractors Only | 100% Exclusive Leads | Est.
-            2021
-          </p>
-          <p className="text-sm text-white/60">
-            Already a licensed contractor?{" "}
+
+          {/* Contractor Application Banner */}
+          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-6">
+            <span className="text-sm text-white/90">Licensed Contractor?</span>
             <a
               href="https://app.blueprintlead.com/apply"
-              className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
             >
-              Apply to join our network
+              Apply to Join Our Network
+              <ArrowRight className="w-4 h-4" />
             </a>
+          </div>
+
+          <p className="text-sm text-white/60">
+            100% Exclusive Leads | Pre-Scheduled Appointments | Est. 2021
           </p>
         </div>
       </section>
