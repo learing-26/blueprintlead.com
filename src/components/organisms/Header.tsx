@@ -75,21 +75,13 @@ export function Header(): React.ReactElement {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center justify-end min-w-[220px] gap-3">
-            <CTAButton
-              variant="secondary"
-              size="md"
+          <div className="hidden lg:flex items-center justify-end min-w-[220px] gap-4">
+            <a
               href="https://app.blueprintlead.com/login"
+              className="text-sm font-medium text-slate-600 hover:text-emerald-accent-600 transition-colors"
             >
               Sign In
-            </CTAButton>
-            <CTAButton
-              variant="outline"
-              size="md"
-              href="https://app.blueprintlead.com/apply"
-            >
-              Apply Now
-            </CTAButton>
+            </a>
             <CTAButton
               variant="primary"
               size="md"
@@ -170,22 +162,6 @@ export function Header(): React.ReactElement {
               {/* Mobile CTA */}
               <div className="p-6 border-t border-gray-200 space-y-3">
                 <CTAButton
-                  variant="secondary"
-                  size="lg"
-                  href="https://app.blueprintlead.com/login"
-                  className="w-full justify-center"
-                >
-                  Sign In
-                </CTAButton>
-                <CTAButton
-                  variant="outline"
-                  size="lg"
-                  href="https://app.blueprintlead.com/apply"
-                  className="w-full justify-center"
-                >
-                  Apply Now
-                </CTAButton>
-                <CTAButton
                   variant="primary"
                   size="lg"
                   icon={Calendar}
@@ -194,6 +170,12 @@ export function Header(): React.ReactElement {
                 >
                   Schedule Consultation
                 </CTAButton>
+                <a
+                  href="https://app.blueprintlead.com/login"
+                  className="block text-center text-sm font-medium text-slate-600 hover:text-emerald-accent-600 transition-colors py-2"
+                >
+                  Sign In to Contractor Portal
+                </a>
               </div>
             </motion.div>
           </>
