@@ -6,7 +6,7 @@ import { NavLink } from "@/components/molecules/NavLink";
 import { CTAButton } from "@/components/molecules/CTAButton";
 import { Button } from "@/components/atoms/Button";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
-import { Calendar, Menu, X } from "lucide-react";
+import { Calendar, Menu, X, LogIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /**
@@ -49,25 +49,25 @@ export function Header(): React.ReactElement {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 min-w-[220px]">
+          <div className="flex-shrink-0">
             <NavLink
               href="/"
-              className="text-3xl font-bold text-slate-900 hover:text-emerald-accent-600 no-underline transition-colors duration-200"
+              className="text-xl lg:text-2xl font-bold text-slate-900 hover:text-emerald-accent-600 no-underline transition-colors duration-200 whitespace-nowrap"
             >
               {SITE_CONFIG.name}
             </NavLink>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center flex-1 gap-8">
+          {/* Desktop Navigation - centered */}
+          <nav className="hidden xl:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <NavLink
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium"
+                className="text-sm font-medium whitespace-nowrap"
               >
                 {link.label}
               </NavLink>
@@ -75,11 +75,12 @@ export function Header(): React.ReactElement {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center justify-end gap-3 ml-8 flex-shrink-0">
+          <div className="hidden xl:flex items-center gap-2">
             <a
               href="https://app.blueprintlead.com/login"
-              className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-emerald-accent-600 transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors whitespace-nowrap"
             >
+              <LogIn className="w-4 h-4" />
               Sign In
             </a>
             <CTAButton
@@ -87,7 +88,7 @@ export function Header(): React.ReactElement {
               size="md"
               href="https://app.blueprintlead.com/apply"
             >
-              Join Our Network
+              Join Network
             </CTAButton>
             <CTAButton
               variant="primary"
@@ -100,7 +101,7 @@ export function Header(): React.ReactElement {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <Button
               variant="text"
               size="sm"
@@ -124,7 +125,7 @@ export function Header(): React.ReactElement {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+              className="fixed inset-0 bg-black/50 z-40 xl:hidden"
               onClick={() => setMobileMenuOpen(false)}
               aria-hidden="true"
             />
@@ -135,7 +136,7 @@ export function Header(): React.ReactElement {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-50 shadow-2xl lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-50 shadow-2xl xl:hidden overflow-y-auto"
             >
               {/* Close Button */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
@@ -187,8 +188,9 @@ export function Header(): React.ReactElement {
                 </CTAButton>
                 <a
                   href="https://app.blueprintlead.com/login"
-                  className="block text-center text-sm font-medium text-slate-500 hover:text-emerald-accent-600 transition-colors py-2"
+                  className="flex items-center justify-center gap-2 text-sm font-medium text-slate-600 hover:text-emerald-accent-600 transition-colors py-3"
                 >
+                  <LogIn className="w-4 h-4" />
                   Contractor Sign In
                 </a>
               </div>
