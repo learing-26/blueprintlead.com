@@ -75,10 +75,10 @@ export function Header(): React.ReactElement {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center justify-end gap-4">
+          <div className="hidden lg:flex items-center justify-end gap-3 ml-8 flex-shrink-0">
             <a
               href="https://app.blueprintlead.com/login"
-              className="text-sm font-medium text-slate-600 hover:text-emerald-accent-600 transition-colors whitespace-nowrap"
+              className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-emerald-accent-600 transition-colors whitespace-nowrap"
             >
               Sign In
             </a>
